@@ -21,11 +21,10 @@ def predict():
         model = pickle.load(open('model (1).pkl','rb'))
         purchased=model.predict(feature)[0]
         if (purchased)==0 :
-            purchased='No Purchase'
+            purchased='Not Purchase'
         elif (purchased)==1 :
             purchased='Purchase'
         print(purchased)
-
         
     return render_template('prediction.html',purchased=purchased)
 
